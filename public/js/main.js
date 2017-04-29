@@ -1,5 +1,10 @@
 var app = angular.module('web', []);
+
 app.controller('web_ctrl', function($scope) {
+    $scope.website = "W3B 0N TH3 R0CK5";
+});
+
+app.controller('posts_ctrl', function($scope) {
     $scope.website = "W3B 0N TH3 R0CK5";
     $scope.posts = [{
             title: 'NodeJS Server',
