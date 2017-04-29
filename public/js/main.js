@@ -12,6 +12,11 @@ app.controller('posts_ctrl', function($scope) {
             gistid: '6123d7161631937d169d9d15f6187e78'
         },
         {
+            title: 'AngularJS',
+            description: 'Basic Controllers',
+            gistid: 'fa6f08bc71966ad98cf4565b44204d82'
+        },
+        {
             title: 'Umbraco',
             description: 'Custom Create Content View',
             gistid: '85611cc6a60bd02014f9a456b35fcc26'

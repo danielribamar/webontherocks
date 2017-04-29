@@ -1,3 +1,13 @@
+@font-face {
+    font-family: _rock;
+    src: url("/fonts/HARD_ROCK.ttf");
+}
+
+@font-face {
+    font-family: _consolas;
+    src: url("/fonts/Consolas.ttf");
+}
+
 html,
 body {
     width: 100%;
@@ -6,6 +16,19 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
+}
+
+h1 {
+    font-family: _rock !important;
+    font-size: 45px !important;
+}
+
+h2,
+h3,
+h4,
+p,
+span {
+    font-family: _consolas !important;
 }
 
 .article {
