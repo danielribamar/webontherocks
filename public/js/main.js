@@ -2,6 +2,7 @@ var app = angular.module('web', []);
 
 app.controller('web_ctrl', function($scope) {
     $scope.website = "W3B 0N TH3 R0CK5";
+    $scope.year = new Date().getFullYear();
 });
 
 app.controller('posts_ctrl', function($scope) {
@@ -13,7 +14,7 @@ app.controller('posts_ctrl', function($scope) {
         },
         {
             title: 'AngularJS',
-            description: 'Basic Controllers',
+            description: 'Basic Controllers and Directives',
             gistid: 'fa6f08bc71966ad98cf4565b44204d82'
         },
         {

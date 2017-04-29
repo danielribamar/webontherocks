@@ -19,6 +19,7 @@
 </head>
 
 <body ng-app="web" ng-controller="web_ctrl">
+    <div class="background"></div>
     <div class="row">
 
         <div class="col-md-1">
@@ -30,27 +31,25 @@
         </div>
     </div>
 
-    <div class="row" ng-controller="posts_ctrl">
+    <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-7 content">
-
+        <div class="col-md-7 content" ng-controller="posts_ctrl">
             <div class="article" ng-repeat="post in posts">
-                <h2 class="grey">{{post.title}}</h1>
-                    <h4 class="grey">{{post.description}}</h4>
-                </h2>
+                <h2 class="grey">{{post.title}}</h2>
+                <h4 class="grey">{{post.description}}</h4>
+
                 <code data-gist-id="{{post.gistid}}"></code>
                 <hr>
             </div>
-
-
         </div>
         <div class="col-md-3 content">
             <div class="article">
-                <h1 class="yellow">_aboutMe</h1>
-                <p class="grey">That rock 'n'roll, eh? That rock'n'roll, it just won't go away. It might hibernate from time to time, and sink back into the swamp. I think the cyclical nature of the universe in which it exists demands it adheres to some of its rules.
+                <h1 class="yellow">aboutMe</h1>
+                <p class="grey">Born from the 80's harvest. Code lover and a music junkie. That's it.</p>
+                <p class="grey">"That rock 'n'roll, eh? That rock'n'roll, it just won't go away. It might hibernate from time to time, and sink back into the swamp. I think the cyclical nature of the universe in which it exists demands it adheres to some of its rules.
                     But it's always waiting there, just around the corner. Ready to make its way back through the sludge and smash through the glass ceiling, looking better than ever. Yeah, that rock'n'roll, it seems like it's faded away sometimes, but
-                    it will never die. And there's nothing you can do about it.</p>
-                <img style="width:100%;" src="/images/alex.gif" />
+                    it will never die. And there's nothing you can do about it."</p>
+                <p class="grey" style="text-align:right;"><i>Alex Turner</i></p>
             </div>
 
         </div>
@@ -58,9 +57,10 @@
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10 footer">
-            <span>©_drm 2017</span>
+            <span class="yellow" style="float:right;font-size:20px;">©_drm{{year}}</span>
         </div>
     </div>
+
     <!--<script src="/js/bootstrap.js"></script>-->
     <script src="/js/main.js"></script>
 </body>
