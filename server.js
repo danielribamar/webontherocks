@@ -3,15 +3,16 @@ var app = express()
 var open = require('open');
 var path = require('path');
 
+app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', __dirname + '/public/views')
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/public/views/index.html'));
 });
 
 app.get('/:postid', function(req, res) {
-    console.log(req.param('postid'));
-    res.sendFile(path.join(__dirname + '/public/views/post.html'));
+    res.render('post', { title: req.param('postid') })
 })
 
 app.listen(5000, function() {
