@@ -1,0 +1,11 @@
+extend _layout
+block content
+      -each post in posts
+       div.article
+        a(href='/posts/#{post.id}')
+            h2.grey #{post.title}
+        h4.grey #{post.description}
+        p.grey #{post.text}
+        if post.gistid != null
+            code(data-gist-id="#{post.gistid}")
+        hr.separator
