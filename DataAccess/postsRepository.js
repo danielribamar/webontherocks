@@ -1,6 +1,6 @@
 var mongoClient = require('mongodb').MongoClient;
 var promise = require('promise');
-
+var ObjectId = require('mongodb').ObjectID;
 module.exports = {
     getAll: function() {
         return new Promise(function(resolve, reject) {
@@ -22,13 +22,12 @@ module.exports = {
         return new Promise(function(resolve, reject) {
             mongoClient.connect("mongodb://localhost:27017/webontherocks", function(err, db) {
                 if (!err || err == null) {
-                    db.collection('posts', function(err, collection) {
-                        var item = collection.findOne({ '_id': id });
-                        console.log('resolving with ' + item);
-                        resolve(item);
-                    });
-
+                    console.log('id, ' + id);
+                    var item = db.collection('posts').findOne({ _id: ObjectId(id) })
+                    console.log(item);
+                    resolve(item);
                 } else {
+                    console.log(err);
                     reject(err);
                 }
             });
