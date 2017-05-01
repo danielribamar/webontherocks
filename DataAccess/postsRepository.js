@@ -19,13 +19,19 @@ module.exports = {
 
     },
     getById: function(id) {
-        mongoClient.connect("mongodb://localhost:27017/webontherocks", function(err, db) {
-            if (!err) {
-                console.log("We are connected");
+        return new Promise(function(resolve, reject) {
+            mongoClient.connect("mongodb://localhost:27017/webontherocks", function(err, db) {
+                if (!err || err == null) {
+                    db.collection('posts', function(err, collection) {
+                        var item = collection.findOne({ '_id': id });
+                        console.log('resolving with ' + item);
+                        resolve(item);
+                    });
 
-            }
-            console.log("Error connected");
-            return;
+                } else {
+                    reject(err);
+                }
+            });
         });
     }
 };

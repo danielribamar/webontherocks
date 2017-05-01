@@ -5,6 +5,8 @@ var path = require('path');
 var postsRepository = require('./DataAccess/postsRepository.js');
 var promise = require('promise');
 
+var posts = "";
+
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/public/views')
 
@@ -14,7 +16,7 @@ app.get('/', function(req, res) {
 
     postsRepository.getAll()
         .then(result => {
-            console.log(result);
+            posts = result;
             console.log('will render now');
             res.render('homepage', {
                 title: 'W3B 0N TH3 R0CK5',
@@ -29,12 +31,24 @@ app.get('/', function(req, res) {
 
 app.get('/posts/:postid', function(req, res) {
     var postid = req.params.postid;
-    var post = findId(posts, postid)
-    res.render('post', { title: post.title, post: post, posts: posts })
+    postsRepository.getById(postid)
+        .then(result => {
+            console.log(result);
+            console.log('will render now');
+            res.render('post', {
+                title: 'W3B 0N TH3 R0CK5',
+                year: new Date().getFullYear(),
+                post: result,
+                posts: posts
+            })
+        })
+        .catch(err => {
+            console.log(err);
+        });
 })
 
 app.listen(5000, function() {
-    open('http://localhost:5000');
+    // open('http://localhost:5000');
     console.log('listening on port 5000!')
 })
 
