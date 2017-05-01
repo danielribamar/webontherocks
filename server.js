@@ -17,11 +17,10 @@ app.get('/', function(req, res) {
     postsRepository.getAll()
         .then(result => {
             posts = result;
-            console.log('will render now');
             res.render('homepage', {
                 title: 'W3B 0N TH3 R0CK5',
                 year: new Date().getFullYear(),
-                posts: result
+                posts: posts
             })
         })
         .catch(err => {
@@ -33,8 +32,6 @@ app.get('/posts/:postid', function(req, res) {
     var postid = req.params.postid;
     postsRepository.getById(postid)
         .then(result => {
-            console.log(result);
-            console.log('will render now');
             res.render('post', {
                 title: 'W3B 0N TH3 R0CK5',
                 year: new Date().getFullYear(),
