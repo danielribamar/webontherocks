@@ -11,8 +11,9 @@ module.exports = {
                             resolve(items);
                         });
                     });
+                } else {
+                    reject(err);
                 }
-                // reject(err);
             });
         });
 
