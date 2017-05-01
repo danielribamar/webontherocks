@@ -18,6 +18,7 @@ html
      
     div.row
         div.col-md-1
+          a(href="/")
             img.image(src='/images/icon003.png',width='100',style="position:fixed")
         div.col-md-10
              h1.yellow #{title}
@@ -27,13 +28,7 @@ html
       div.col-md-7.content
         block content
       div.col-md-3.content
-        h1.yellow aboutMe
-        p.grey Born from the 80's harvest. Code lover and a music junkie. That's it.
-        p.grey 
-          |"That rock 'n'roll, eh? That rock'n'roll, it just won't go away. It might hibernate from time to time, and sink back into the swamp. I think the cyclical nature of the universe in which it exists demands it adheres to some of its rules.
-          |But it's always waiting there, just around the corner. Ready to make its way back through the sludge and smash through the glass ceiling, looking better than ever. Yeah, that rock'n'roll, it seems like it's faded away sometimes, but
-          |it will never die. And there's nothing you can do about it."
-        p.grey(style="text-align:right;color:") Alex Turner
+        block sidebar
     div.row
       div.col-md-12.footer
         span.yellow(style='font-size:20px') 

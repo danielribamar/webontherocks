@@ -2,6 +2,16 @@ extend _layout
 block content
  div.article    
         h2.grey #{post.description}
+        -each lang in post.languages
+            span.blue  #{lang}
         p.grey #{post.text}
         if post.gistid != null
             code(data-gist-id="#{post.gistid}")
+
+
+block sidebar
+        h2.yellow.title Posts
+        ul
+          -each post in posts
+            li
+              a(href="/posts/#{post.id}") #{post.title}

@@ -34,12 +34,24 @@ h1 {
     font-size: 45px !important;
 }
 
-h2,
+h2.title {
+    font-family: _rock !important;
+    font-size: 45px !important;
+}
+
 h3,
 h4,
 p,
 span {
     font-family: _consolas !important;
+}
+
+ul>li {
+    color: #337ab7;
+}
+
+ul>li a {
+    color: #8B8C8C;
 }
 
 .article {
@@ -52,6 +64,14 @@ span {
 
 .yellow {
     color: #879111 !important;
+}
+
+.blue {
+    color: #337ab7 !important;
+}
+
+.languages {
+    font-size: 12px;
 }
 
 .menu {
