@@ -2,7 +2,7 @@ extend _layout
 block content
       -each post in posts
        div.article
-        a(href='/posts/#{post.id}')
+        a(href='/posts/#{post.ObjectId}')
             h2.grey #{post.title}
         h4.grey #{post.description}
             -each lang in post.languages
@@ -18,7 +18,7 @@ block sidebar
         ul
           -each post in posts
             li
-              a(href="/posts/#{post.id}") #{post.title}
+              a(href="/posts/#{post.ObjectId}") #{post.title}
         h2.yellow.title aboutMe
         p.grey Born from the 80's harvest. Code lover and a music junkie. That's it.
         p.grey 
