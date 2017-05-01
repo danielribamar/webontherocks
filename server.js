@@ -14,6 +14,7 @@ app.get('/', function(req, res) {
 
     postsRepository.getAll()
         .then(result => {
+            console.log(result);
             console.log('will render now');
             res.render('homepage', {
                 title: 'W3B 0N TH3 R0CK5',
