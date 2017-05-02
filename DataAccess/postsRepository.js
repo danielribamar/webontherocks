@@ -2,6 +2,7 @@ var mongoClient = require('mongodb').MongoClient;
 var promise = require('promise');
 var ObjectId = require('mongodb').ObjectID;
 module.exports = {
+
     getAll: function() {
         return new Promise(function(resolve, reject) {
             mongoClient.connect("mongodb://localhost:27017/webontherocks", function(err, db) {

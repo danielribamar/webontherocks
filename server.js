@@ -29,7 +29,9 @@ app.get('/', function(req, res) {
 });
 
 app.get('/posts/:postid', function(req, res) {
+
     var postid = req.params.postid;
+
     postsRepository.getById(postid)
         .then(result => {
             res.render('post', {
