@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function(req, res) {
 
     postsRepository.getAll()
-        .then(result => {
+        .then(function(result) {
             posts = result;
             res.render('homepage', {
                 title: 'W3B 0N TH3 R0CK5',
@@ -33,7 +33,7 @@ app.get('/posts/:postid', function(req, res) {
     var postid = req.params.postid;
 
     postsRepository.getById(postid)
-        .then(result => {
+        .then(function(resul) {
             res.render('post', {
                 title: 'W3B 0N TH3 R0CK5',
                 year: new Date().getFullYear(),
