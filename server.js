@@ -48,11 +48,3 @@ app.listen(5000, function() {
     // open('http://localhost:5000');
     console.log('listening on port 5000!')
 })
-
-function findId(data, idToLookFor) {
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].ObjectId == idToLookFor) {
-            return (data[i]);
-        }
-    }
-}
