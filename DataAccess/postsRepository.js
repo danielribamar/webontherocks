@@ -6,7 +6,7 @@ module.exports = {
 
     getAll: function() {
         return new Promise(function(resolve, reject) {
-            mongoClient.connect("mongodb://192.168.3.156:27017/webontherocks", function(err, db) {
+            mongoClient.connect("mongodb://localhost:27017/webontherocks", function(err, db) {
                 // mongoClient.connect("mongodb://localhost:27017/webontherocks", function(err, db) {
                 if (!err || err == null) {
                     db.collection('posts', function(err, collection) {
@@ -24,7 +24,7 @@ module.exports = {
     },
     getById: function(id) {
         return new Promise(function(resolve, reject) {
-            mongoClient.connect("mongodb://192.168.3.156:27017/webontherocks", function(err, db) {
+            mongoClient.connect("mongodb://localhost:27017/webontherocks", function(err, db) {
                 // mongoClient.connect("mongodb://localhost:27017/webontherocks", function(err, db) {
                 if (!err || err == null) {
                     var item = db.collection('posts').findOne({ _id: ObjectId(id) })
