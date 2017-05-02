@@ -23,7 +23,7 @@ app.get('/', function(req, res) {
                 posts: posts
             })
         })
-        .catch(err => {
+        .catch(function(err) {
             console.log(err);
         });
 });
@@ -41,7 +41,7 @@ app.get('/posts/:postid', function(req, res) {
                 posts: posts
             })
         })
-        .catch(err => {
+        .catch(function(err) {
             console.log(err);
         });
 })
