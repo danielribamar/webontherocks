@@ -47,6 +47,6 @@ app.get('/posts/:postid', function(req, res) {
 })
 
 app.listen(5000, function() {
-    // open('http://localhost:5000');
+    open('http://localhost:5000');
     console.log('listening on port 5000!')
 })
