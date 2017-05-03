@@ -35,7 +35,7 @@ app.get('/posts/:postid', function(req, res) {
     postsRepository.getById(postid)
         .then(function(result) {
             res.render('post', {
-                title: 'W3B 0N TH3 R0CK5',
+                title: result.title,
                 year: new Date().getFullYear(),
                 post: result,
                 posts: posts
